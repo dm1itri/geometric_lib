@@ -1,4 +1,7 @@
-def area(a, h):
+from utils import correct_value
+
+
+def area(a, h) -> int | float:
     """
     Параметры:
         a - вещественное число, одна сторона треугольника
@@ -6,9 +9,12 @@ def area(a, h):
     Возвращаемое значение:
         вещественное число, площадь треугольника с заданными сторонами (a, h)
     """
+    if not (correct_value(a) * correct_value(h)):
+        return 0
     return a * h / 2
 
-def perimeter(a, b, c):
+
+def perimeter(a, b, c) -> int | float:
     """
     Параметры:
         a - вещественное число, первая сторона треугольника
@@ -17,4 +23,6 @@ def perimeter(a, b, c):
     Возвращаемое значение:
         вещественное число, периметр треугольника с заданными сторонами (a, b, c)
     """
+    if not (correct_value(a) and correct_value(b) and correct_value(c)):
+        return 0
     return a + b + c
