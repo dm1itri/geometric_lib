@@ -1,5 +1,7 @@
+from utils import correct_value
 
-def area(a):
+
+def area(a) -> float:
     """
     Нахождение площади квадрата с заданной стороной
     -> area(5)
@@ -9,10 +11,12 @@ def area(a):
     Возвращаемое значение:
         вещественное число, площадь прямоугольника с заданными сторонами (a)
     """
-    return a * a
+    if not (correct_value(a)):
+        return 0
+    return a * a * correct_value(a)
 
 
-def perimeter(a):
+def perimeter(a) -> float:
     """
     Нахождение периметра квадрата с заданной стороной
     -> perimeter(5)
@@ -22,4 +26,6 @@ def perimeter(a):
     Возвращаемое значение:
         вещественное число, периметр прямоугольника с заданными сторонами (a)
     """
-    return 4 * a
+    if not (correct_value(a)):
+        return 0
+    return 4 * a * correct_value(a)

@@ -1,7 +1,8 @@
 import math
+from utils import correct_value
 
 
-def area(r):
+def area(r) -> float:
     """
     Нахождение площади круга с заданным радиусом
     -> area(5)
@@ -11,10 +12,12 @@ def area(r):
     Возвращаемое значение:
         вещественное число, площадь круга с заданным радиусом (r)
     """
-    return math.pi * r * r
+    if not correct_value(r):
+        return 0
+    return r * r * math.pi
 
 
-def perimeter(r):
+def perimeter(r) -> float:
     """
     Нахождение периметра круга с заданным радиусом
     -> perimeter(5)
@@ -24,4 +27,6 @@ def perimeter(r):
     Возвращаемое значение:
         вещественное число, периметр круга с заданным радиусом (r)
     """
+    if not correct_value(r):
+        return 0
     return 2 * math.pi * r
