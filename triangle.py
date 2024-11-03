@@ -17,8 +17,6 @@ def area(a, h) -> int | float:
     return a * h / 2
 
 
-def perimeter(a, b, c):
-
 def perimeter(a, b, c) -> int | float:
     """
     Нахождение периметра треугольника с заданными сторонами
